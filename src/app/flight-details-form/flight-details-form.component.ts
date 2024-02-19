@@ -32,7 +32,7 @@ export class FlightDetailsFormComponent {
     const headers = { 
       'Content-Type': 'application/json',
       'token': 'WW91IG11c3QgYmUgdGhlIGN1cmlvdXMgdHlwZS4gIEJyaW5nIHRoaXMgdXAgYXQgdGhlIGludGVydmlldyBmb3IgYm9udXMgcG9pbnRzICEh',
-      'candidate': 'Priyanka' // Replace 'Your Name' with your actual name or candidate identifier
+      'candidate': 'Priyanka' 
     };
     const body = {
       airline: this.airline,
@@ -42,18 +42,14 @@ export class FlightDetailsFormComponent {
       numOfGuests: this.numOfGuests,
       comments: this.comments
     };
-    console.log(body)
     this.http.post(url, body, { headers }).subscribe({
       next: (response) => {
         alert('Submitted, Thank You');
-        console.log('Submission successful', response);
-        this.submitted = true; // Set to true on successful submission
-        // Reset form fields after successful submission
+        this.submitted = true;
         this.resetForm(form);
       },
       error: (error) => {
         alert('Please check for errors');
-        console.error('Submission failed', error);
         this.submitError = 'Failed to submit flight details. Please try again later.';
       },
       complete: () => {
@@ -75,7 +71,7 @@ export class FlightDetailsFormComponent {
 
   resetForm(form: NgForm): void {
     form.resetForm({
-      numOfGuests: 1 // Default value
+      numOfGuests: 1 
     });
     this.submitted = false;
     this.submitError = '';
