@@ -1,0 +1,81 @@
+/* Container styling for the form */
+form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  /* Style adjustments for all input types and textarea */
+  input[type="text"], input[type="number"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 20px; /* Increase bottom margin for better spacing */
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't increase the box size */
+  }
+  
+  textarea {
+    height: 150px; /* Sets a fixed height for the textarea */
+    resize: vertical; /* Allows only vertical resizing */
+  }
+  
+  /* Label styling for better readability */
+  label {
+    display: block;
+    margin-bottom: 5px; /* Adds a small space below the label */
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Submit button styling for visual appeal */
+  button[type="submit"] {
+    width: 100%;
+    background-color: #5C6BC0; 
+    color: white;
+    padding: 14px 20px;
+    margin: 10px 0 0; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #3F51B5; /* Darker shade on hover for interaction feedback */
+  }
+  
+  div {
+    margin-bottom: 10px;
+  }
+  
+  input.ng-touched.ng-invalid {
+    border: 2px solid red;
+  }
+  
+  .error {
+    color: red;
+    font-size: 0.8em;
+  }
+
+  h2 {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .logout-button {
+    position: fixed;
+    top: 20px; 
+    right: 20px; 
+    z-index: 9999; 
+    background-color: #5C6BC0;
+    cursor: pointer;
+    color: white;
+  }
+
+  
+  

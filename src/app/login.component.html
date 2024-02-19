@@ -1,0 +1,17 @@
+<form (ngSubmit)="onLogin()">
+    <div>
+      <label>Email</label>
+      <input type="email" [(ngModel)]="email" name="email" required>
+    </div>
+    <div>
+      <label>Password</label>
+      <input type="password" [(ngModel)]="password" name="password" required>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+  <div *ngIf="errorMessage" class="error-container">
+    <div class="error">{{ errorMessage }}</div>
+  </div>
+  <div class="register-link">
+    <p>First time here? <a routerLink="/register">Register</a></p>
+  </div>

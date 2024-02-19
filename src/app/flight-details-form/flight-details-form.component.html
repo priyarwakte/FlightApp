@@ -1,0 +1,34 @@
+<button class="logout-button" (click)="logout()">Logout</button>
+<h2>Flight Information Form</h2>
+<form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+    <div>
+        <label for="airline">Airline *</label>
+        <input id="airline" type="text" name="airline" [(ngModel)]="airline" #airlineInput="ngModel" required>
+        <div *ngIf="airlineInput.touched && airlineInput.invalid" class="error">Airline is required</div>
+    </div>
+    <div>
+        <label for="arrivalDate">Arrival Date *</label>
+        <input id="arrivalDate" type="date" name="arrivalDate" [(ngModel)]="arrivalDate" #arrivalDateInput="ngModel" required>
+        <div *ngIf="arrivalDateInput.touched && arrivalDateInput.invalid" class="error">Arrival Date is required</div>
+    </div>
+    <div>
+        <label for="arrivalTime">Arrival Time *</label>
+        <input id="arrivalTime" type="time" name="arrivalTime" [(ngModel)]="arrivalTime" #arrivalTimeInput="ngModel" required>
+        <div *ngIf="arrivalTimeInput.touched && arrivalTimeInput.invalid" class="error">Arrival Time is required</div>
+    </div>
+    <div>
+        <label for="flightNumber">Flight Number *</label>
+        <input id="flightNumber" type="text" name="flightNumber" [(ngModel)]="flightNumber" #flightNumberInput="ngModel" required>
+        <div *ngIf="flightNumberInput.touched && flightNumberInput.invalid" class="error">Flight Number is required</div>
+    </div>
+    <div>
+        <label for="numOfGuests">Number of Guests *</label>
+        <input id="numOfGuests" type="number" name="numOfGuests" [(ngModel)]="numOfGuests" #numOfGuestsInput="ngModel" required  min="1">
+        <div *ngIf="numOfGuestsInput.touched && numOfGuestsInput.invalid" class="error">Number of Guests is required</div>
+    </div>
+    <div>
+        <label for="comments">Comments (Optional)</label>
+        <textarea id="comments" name="comments" [(ngModel)]="comments"></textarea>
+    </div>
+    <button type="submit">Submit</button>
+</form>
