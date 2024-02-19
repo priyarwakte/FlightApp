@@ -17,11 +17,9 @@ export class LoginComponent {
     if (this.email && this.password) {
       this.authService.signIn(this.email, this.password)
         .then(() => {
-          console.log('Login successful');
           this.router.navigate(['/flight-details']);
         })
         .catch(error => {
-          console.error('Login failed:', error);
           this.errorMessage = 'Login failed. Please check your credentials and try again.';
         });
     }

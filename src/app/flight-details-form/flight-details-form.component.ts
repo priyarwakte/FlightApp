@@ -61,11 +61,9 @@ export class FlightDetailsFormComponent {
   logout(): void {
     this.authService.signOut()
       .then(() => {
-        console.log('Logged out successfully');
         this.router.navigate(['/login']);
       })
       .catch(error => {
-        console.error('Logout error:', error);
       });
   }
 

@@ -17,10 +17,8 @@ export class RegisterComponent {
   onSubmit() {
     if (this.email && this.password) {
       this.authService.signUp(this.email, this.password).then(() => {
-        console.log('Registration successful');
         this.router.navigate(['/login']);
       }).catch(error => {
-        console.error('Registration error:', error);
         this.errorMessage = 'Registration failed. Please check your credentials and try again.';
       });
     }
